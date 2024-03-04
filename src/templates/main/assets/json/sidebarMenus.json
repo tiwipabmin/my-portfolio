@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Menu",
+    "groups": [
+      {
+        "id": "hospital_management",
+        "title": "Hospital",
+        "icon": "fa-solid fa-house-chimney-medical",
+        "menus": [
+          {
+            "title": "Dashboard",
+            "routeName": "dashboard"
+          },
+          {
+            "title": "Patients",
+            "routeName": "patients"
+          }
+        ]
+      },
+      {
+        "id": "research_management",
+        "title": "Research",
+        "icon": "fa-solid fa-flask",
+        "menus": [
+          {
+            "title": "Project",
+            "routeName": "researchProjects"
+          },
+          {
+            "title": "Assessor",
+            "routeName": "assessors"
+          }
+        ]
+      }
+    ]
+  }
+]

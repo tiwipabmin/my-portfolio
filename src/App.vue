@@ -1,30 +1,69 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <DynamicDialog />
+    <Toast />
+    <router-view />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
+<script>
+import { usePrimeVue } from 'primevue/config'
+// import { mapState, mapActions } from 'vuex'
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+export default {
+  setup: () => ({
+    changeToThai: () => {
+      const primevue = usePrimeVue()
+      primevue.config.locale.dayNames = [
+        'อาทิตย์',
+        'จันทร์',
+        'อังคาร',
+        'พุธ',
+        'พฤหัสบดี',
+        'ศุกร์',
+        'เสาร์',
+      ]
+      primevue.config.locale.dayNamesShort = ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.']
+      primevue.config.locale.dayNamesMin = ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.']
+      primevue.config.locale.monthNames = [
+        'มกราคม',
+        'กุมภาพันธ์',
+        'มีนาคม',
+        'เมษายน',
+        'พฤษภาคม',
+        'มิถุนายน',
+        'กรกฎาคม',
+        'สิงหาคม',
+        'กันยายน',
+        'ตุลาคม',
+        'พฤศจิกายน',
+        'ธันวาคม',
+      ]
+      primevue.config.locale.monthNamesShort = [
+        'ม.ค.',
+        'ก.พ.',
+        'มี.ค.',
+        'เม.ย.',
+        'พ.ค.',
+        'มิ.ย.',
+        'ก.ค.',
+        'ส.ค.',
+        'ก.ย.',
+        'ต.ค.',
+        'พ.ย.',
+        'ธ.ค.',
+      ]
+      primevue.config.locale.clear = 'ล้าง'
+      primevue.config.locale.today = 'วันนี้'
+    },
+  }),
+  mounted() {
+    this.changeToThai()
+  },
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+</script>
+
+<style>
+.p-radiobutton-box.p-highlight .p-radiobutton-icon {
+  visibility: hidden;
 }
 </style>

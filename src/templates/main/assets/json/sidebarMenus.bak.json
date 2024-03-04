@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Menu",
+    "groups": [
+      {
+        "id": "hospital_management",
+        "title": "Hospital",
+        "icon": "fa-solid fa-house-chimney-medical",
+        "menus": [
+          {
+            "title": "Dashboard",
+            "routeName": "dashboard"
+          },
+          {
+            "title": "Patients",
+            "routeName": "patients"
+          }
+        ]
+      }
+    ]
+  }
+]

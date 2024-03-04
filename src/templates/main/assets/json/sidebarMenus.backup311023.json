@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Menu",
+    "groups": [
+      {
+        "id": "hospital_management",
+        "title": "Hospital",
+        "icon": "fa-solid fa-house-chimney-medical",
+        "menus": [
+          {
+            "title": "Home",
+            "routeName": "home"
+          }
+        ]
+      },
+      {
+        "id": "research_management",
+        "title": "Research",
+        "icon": "fa-solid fa-flask",
+        "menus": []
+      }
+    ]
+  }
+]
